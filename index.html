@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KeyBoard Clicks </title>
+    <style>
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            /* background-color: rgb(220 53 69); */
+        }
+        #num{
+            width: 100px;
+            height: 100px;
+            border: 2px dashed white;
+            border-radius: 50%;
+            text-align: center;
+            margin:auto ;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 50px;
+        }
+        .container{
+            margin-top: 40px;
+            border: 1px solid white;
+           background-color: #152238;
+            padding: 6px;
+            border-radius: 16px;
+            height: ;
+        }
+        #key{
+            font-size: 30px;
+            font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+
+        }
+        .col-4{
+            width: 300px;
+            text-align: center;
+         
+        }
+        #text{
+            border: 0px solid #152238;
+            border-bottom: 2px solid;
+            padding: 8px;
+            background: transparent;
+            color: white;
+        }
+        .kk{
+            font-size: 20px;
+        }
+        #y{
+            border: 1px solid white;
+            margin: auto 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-4">
+                <h1 id="num"></h1>
+              
+                <p id="key">Key Pressed </p>
+                <h2 id="keyword">Press Any Key</h2>
+                <br>
+                <input type="text" id="text" autofocus>
+                <br><br>
+                <span id="keypress" class="kk"></span>
+                <span id="y"></span>
+                <span id="keynum" class="kk"></span>
+                <br>
+            </div> 
+        </div>
+    </div>
+    <script src="jquery.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#text').on('keydown',function(event){
+                console.log(event);
+                $('#num').html(event.which);
+                $('#key').html("Key Pressed : " + event.key + " ");
+               $('#keypress').html("Key : " + event.key + " ");
+              $('#keynum').html(" "+"Code :" + event.keyCode + " ")
+            });
+        })
+    </script>
+</body>
+</html>
